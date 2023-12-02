@@ -1,3 +1,3 @@
-The exchange rates are hard-coded and only support 3 currencies (EUR, USD, GBP).
+The exchange rates are retrieved from the openexchangerates.com API.
 
 ![Demo](assets/CurrencyConverterDemo.gif)
