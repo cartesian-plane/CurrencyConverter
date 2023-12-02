@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Arrays;
 
 public class Converter {
     private static String cachedInput;
@@ -84,7 +85,6 @@ public class Converter {
             public void actionPerformed(ActionEvent e) {
                 String userInput = textField.getText();
                 if (inputIsValid(userInput)) {
-                    System.out.println("Valid input: " + userInput);
                     cachedInput = userInput;
 
 
@@ -98,10 +98,11 @@ public class Converter {
                     }
 
 
-                    int initialCurrencyIndex = getIndexForCurrency(convertFrom);
-                    int targetCurrencyIndex = getIndexForCurrency(convertTo);
+//                    int initialCurrencyIndex = getIndexForCurrency(convertFrom);
+//                    int targetCurrencyIndex = getIndexForCurrency(convertTo);
 
-                    double exchangeRate = exchangeRates[initialCurrencyIndex][targetCurrencyIndex];
+                    //double exchangeRate = exchangeRates[initialCurrencyIndex][targetCurrencyIndex];
+                    double exchangeRate = getExchangeRate(convertFrom, convertTo);
                     double initialValue = Double.parseDouble(cachedInput);
                     double convertedValue = initialValue * exchangeRate;
 
@@ -110,6 +111,10 @@ public class Converter {
 
                     String message = "Converted value: " + currencySymbol + roundedAmount;
                     resultLabel.setText(message);
+
+                    
+                    double rate = getExchangeRate("EUR", "GBP");
+                    System.out.println("Final rate: " + rate);
 
 
                 } else {
@@ -161,5 +166,48 @@ public class Converter {
         }
         // this will never be reached
         return "€";
+    }
+
+    /**
+     * First currency is the one to convert FROM, the other one is the one to convert TO.
+     * @param currency1
+     * @param currency2
+     * @return
+     */
+    private static double getExchangeRate(String currency1, String currency2) {
+//        boolean firstRate = false;
+//        boolean secondRate = false;
+
+
+
+        double exchangeRate1 = 0;
+        double exchangeRate2 = 1;
+        String currentRates[] = APIRequest.getCurrentRates().split(",");
+        System.out.println(Arrays.deepToString(currentRates));
+
+        for (int i = 0; i < currentRates.length; i++) {
+            if (currentRates[i].contains(currency1)) {
+                String[] parts = currentRates[i].split(":");
+                exchangeRate1 = Double.parseDouble(parts[1]);
+                System.out.println("Rate 1: " + exchangeRate1);
+               // firstRate = true;
+            } else if (currentRates[i].contains(currency2)) {
+                String[] parts = currentRates[i].split(":");
+                System.out.println("Parts2:" + parts[1]);
+                exchangeRate2 = Double.parseDouble(parts[1]);
+                System.out.println("Rate 2: " + exchangeRate2);
+                //secondRate = true;
+            }
+
+//            if (firstRate && secondRate) {
+//                break;
+//            }
+
+        }
+
+        double trueExchangeRate = exchangeRate2 / exchangeRate1;
+
+        return trueExchangeRate;
+
     }
 }
