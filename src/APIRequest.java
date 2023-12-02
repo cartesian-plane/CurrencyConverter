@@ -45,6 +45,7 @@ public class APIRequest {
                     response.append(inputLine);
                 }
 
+                System.out.println("Called API");
                 in.close();
 
                 // Handle the response data as needed

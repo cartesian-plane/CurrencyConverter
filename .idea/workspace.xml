@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee90d54a-6591-4cc9-b8ae-3ee5b58c43ee" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/src/EnviromentFileParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ee90d54a-6591-4cc9-b8ae-3ee5b58c43ee" name="Changes" comment="Add API support&#10;&#10;Now the currencies are updated on every conversion, using the openexchangerates.org API.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APIRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Converter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,13 +85,41 @@
       <option name="project" value="LOCAL" />
       <updated>1701353418835</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add API support&#10;&#10;Now the currencies are updated on every conversion, using the openexchangerates.org API.">
+      <option name="closed" value="true" />
+      <created>1701538029560</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701538029560</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add API support&#10;&#10;Now the currencies are updated on every conversion, using the openexchangerates.org API.">
+      <option name="closed" value="true" />
+      <created>1701538261124</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701538261124</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add README.md" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Add API support&#10;&#10;Now the currencies are updated on every conversion, using the openexchangerates.org API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add API support&#10;&#10;Now the currencies are updated on every conversion, using the openexchangerates.org API." />
   </component>
 </project>
